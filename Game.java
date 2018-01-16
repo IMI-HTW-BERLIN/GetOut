@@ -54,25 +54,40 @@ public class Game
         
         // initialise room exits
         kitchen.setExits("north", cafeteria);
+        
         cafeteria.setExits("south", kitchen);
         cafeteria.setExits("north", workingArea);
+        
         workingArea.setExits("south", cafeteria);
         workingArea.setExits("west", toiletRoom);
         workingArea.setExits("east", cubby);
         workingArea.setExits("north", lobby);
+        
         cubby.setExits("west", workingArea);
+        
         toiletRoom.setExits("east", workingArea);
+        
         lobby.setExits("south", workingArea);
         lobby.setExits("west", directorsRoom);
         lobby.setExits("east", meetingRoom);
         lobby.setExits("north", reception);
+        
         directorsRoom.setExits("west", lobby);
+        
         meetingRoom.setExits("east", lobby);
+        
         reception.setExits("south", lobby);
         reception.setExits("north", exit);
         
-        kitchen.addItem(new Item("coffee", "A tasty cup of coffee that restores your health", 0));
-
+        // Set up Items
+        cafeteria.addItem(new Item("coffee", "A tasty cup of coffee that restores your health", 0));
+        kitchen.addItem(new Item("spoon", "A shiny silver spoon", 150));
+        workingArea.addItem(new Item("stapler", "A stapler (sponsored by Staples)", 200));
+        directorsRoom.addItem(new Item("bat", "A wooden baseball bat signed by Derek Jeter", 2000));
+        directorsRoom.addItem(new Item("printer", "A laser printer", 15000));
+        meetingRoom.addItem(new Item("shredder", "A shredder", 2000));
+        toiletRoom.addItem(new Item("window", "A very small, very dirty window", -1));
+        reception.addItem(new Item("pencil", "A very pointy-looking pencil", 100));
         
         currentRoom = cubby;  // start game in a cubby
     }
