@@ -208,12 +208,7 @@ public class Game
             printLocationInfo();
         }
         
-        if(currentRoom.isExit()){
-            return true;
-        }
-        
-        return false;
-        
+        return currentRoom.isExit();
     }
 
     /** 
